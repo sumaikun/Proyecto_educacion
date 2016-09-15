@@ -1,0 +1,49 @@
+ <section class="content-header">
+      <h1>
+        {{title}} 
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{title}}</li>
+      </ol>
+</section>
+    <section class="content">
+      <div class="main">
+        <div class="container"> 
+          <div class="box box-primary" style="max-width:500px !important;">
+            <div class="box-header with-border">
+              <h3 class="box-title">Crear Habilidad</h3>
+            </div>  
+
+                  <form ng-submit="saveHabilidad()" id="myForm" onsubmit="reset()">               
+                    <div class="box-body">
+                      <div class="form-group">
+                      <label>Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa Nombre Usuario" pattern='^[A-Za-z ]+$' title="no se admiten valores numericos" ng-model="Habilidad.name" required/>
+                      </div>
+                      <div class="form-group">
+                        <select class="form-control" ng-model="Habilidad.tema" required>
+                          <option value=''>Selecciona</option>
+                          
+                            <option ng-repeat="(key,value) in Temas" value="{{key}}" >{{value}}</option> 
+                                                
+                        </select>
+                      </div>
+                      <div class="form-group">
+                         <button type="submit"  class="btn btn-primary">
+                          Guardar
+                         </button> 
+                      </div>                      
+                  </form>   
+                  <p>{{connect.message}}</p>     
+          </div> 
+        </div>
+      </div>         
+    </section>
+<script>
+  function reset()
+   {
+      document.getElementById("myForm").reset();
+   }
+</script>
