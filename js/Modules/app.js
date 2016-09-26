@@ -1,7 +1,11 @@
 var app = angular.module("Application",['ngRoute']);
 app.config(function ($routeProvider) { 
   console.log($routeProvider);
-  $routeProvider    
+  $routeProvider
+    .when('/User',{ 
+      controller: 'UserController', 
+      templateUrl: 'js/Views/User/creation.html' 
+    })       
     .when('/Calendar',{ 
       controller: 'CalendarController', 
       templateUrl: 'js/Views/Calendar.html' 
