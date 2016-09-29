@@ -16,35 +16,35 @@
               <h3 class="box-title">Crear Usuario</h3>
             </div>  
 
-                  <form ng-submit="saveUser()" id="myForm" onsubmit="reset()" enctype ="multipart/form-data">               
+                  <form ng-submit="saveUser()"  onsubmit="reset()" enctype ="multipart/form-data">               
                     <div class="box-body">
                       <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa Nombre Usuario" pattern='^[A-Za-z ]+$' title="no se admiten valores numericos" ng-model="User.name" autocomplete="off" />
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa Nombre Usuario" pattern='^[A-Za-z ]+$' title="no se admiten valores numericos" ng-model="User.name" autocomplete="off" required/>
                       </div>
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" placeholder="Ingresa el email" class="form-control" ng-model="User.email" autocomplete="off" />
+                        <input type="email" placeholder="Ingresa el email" class="form-control" ng-model="User.email" autocomplete="off" required/>
                       </div>
                       <div class="form-group">
                         <label>Contraseña</label>
-                        <input type="password" placeholder="Ingresa la contraseña" class="form-control" ng-model="User.password" />
+                        <input type="password" placeholder="Ingresa la contraseña" class="form-control" ng-model="User.password" required/>
                       </div>
                       <div class="form-group">
                         <label>Edad</label>
-                        <input type="number"  class="form-control" placeholder="Ingresa la edad" ng-model="User.age" autocomplete="off"  />
+                        <input type="number"  class="form-control" placeholder="Ingresa la edad" ng-model="User.age" autocomplete="off"  required/>
                       </div>
                       <div class="form-group">
                         <label>Rol</label>
-                        <select type="select"  class="form-control"  ng-model="User.rol"  >
+                        <select type="select"  class="form-control"  ng-model="User.rol"  required>
                         <option value="">Selecciona</option>
                         <option value=1>Profesor</option>
                         <option value=2>Estudiante</option>
                         </select>
                       </div>
                       <div class="form-group">
-                        <input type="file" class="form-control" file="User.image">
-                        <div>param.file: {{User.image}}</div> 
+                        <input type = "file" file-model = "User.file" required/>
+                        <div>User: {{User}}</div> 
                       </div>
                       <div class="form-group">
                          <button type="submit"   class="btn btn-danger">
