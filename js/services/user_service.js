@@ -7,7 +7,25 @@ app.factory('UserResource',['$http','$q',function($http,$q){
 	UserResource.insertUser = function(dt)
 	{
 		console.log(dt);
-		$http.post("http://localhost/Gappi/public/StoreUser",dt)
+		//$http.post("http://localhost/Gappi/public/StoreUser",dt)
+        $http({method: 'POST',
+            url: "http://localhost/Gappi/public/StoreUser",
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            data:{dt},
+            transformRequest: function (data, headersGetter) {
+                var formData = new FormData();
+                angular.forEach(data, function (value, key) {
+                    formData.append(key, value);
+                });
+
+                var headers = headersGetter();
+                delete headers['Content-Type'];
+
+                return formData;
+            }
+        })
 		.success(function(data){
 
         	console.log('funcion enviada');
@@ -22,7 +40,7 @@ app.factory('UserResource',['$http','$q',function($http,$q){
 
 
 
-    SkillResource.listsHabilidades = function()
+    UserResource.listsHabilidades = function()
     {
 
         $http.get("http://localhost/Gappi/public/listshabilidad")
@@ -38,7 +56,7 @@ app.factory('UserResource',['$http','$q',function($http,$q){
 
     }
 
-	return SkillResource;	
+	return UserResource;	
 	
 }]);
 

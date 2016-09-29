@@ -3,10 +3,11 @@ app.controller('UserController',['$scope','UserResource',function($scope,UserRes
 	$scope.title = "Usuario";
 	$scope.connect = {};
 	$scope.User = {};
-
+	$scope.param = {};
 	
 		
 	$scope.saveUser = function(){
+		console.log('imagen: '+$scope.User.image);
 		var request = UserResource.insertUser($scope.User);		
 		request.then(function(response){
 			console.log('success');
