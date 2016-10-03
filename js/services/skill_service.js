@@ -7,7 +7,7 @@ app.factory('SkillResource',['$http','$q',function($http,$q){
 	SkillResource.insertHabilidad = function(dt)
 	{
 		console.log(dt);
-		$http.post('"http://localhost/Gappi/public/StoreHabilidad"',dt)
+		$http.post("http://localhost/Gappi/public/StoreHabilidad",dt)
 		.success(function(data){
 
         	console.log('funcion enviada');

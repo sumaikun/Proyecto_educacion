@@ -25,7 +25,7 @@ app.controller('SkillController',['$scope','TemaResource','SkillResource',functi
 		
 	$scope.saveHabilidad = function(){
 		var request = SkillResource.insertHabilidad($scope.Habilidad);
-		SkillResource.test();
+		//SkillResource.test();
 		request.then(function(response){
 			console.log('success');
 			$scope.connect = response;

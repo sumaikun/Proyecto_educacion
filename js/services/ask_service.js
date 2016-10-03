@@ -7,6 +7,7 @@ app.factory('AskResource',['$http','$q',function($http,$q){
     	AskResource.insertFormulacion = function(dt)
     	{
     		console.log(dt);
+            
     		$http.post("http://localhost/Gappi/public/StoreFormulacion",dt)
     		.success(function(data){
 
