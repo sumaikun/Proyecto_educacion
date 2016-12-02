@@ -37,6 +37,10 @@ app.config(function ($routeProvider) {
     .when('/Califications',{ 
       controller: 'CalificationController', 
       templateUrl: 'js/Views/Califications.html' 
+    })
+    .when('/Charts',{ 
+      controller: 'ChartController', 
+      templateUrl: 'js/Views/Charts/Charts.html' 
     })        
     .when('/',{ 
       controller: 'IndexController', 
