@@ -1,4 +1,4 @@
-var app = angular.module("Application",['ngRoute']);
+var app = angular.module("Application",['ngRoute',"ng-fusioncharts"]);
 app.config(function ($routeProvider) { 
   console.log($routeProvider);
   $routeProvider

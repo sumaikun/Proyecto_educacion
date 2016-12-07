@@ -11,13 +11,24 @@
     <section class="content">
       <div class="main">
         <div class="container"> 
-          <div class="box box-primary" style="max-width:500px !important;">
+          <div class="box box-primary" style="max-width:600px !important;">
             <div class="box-header with-border">
               <h3 class="box-title">Graficas -Profesor</h3>
-            </div>  
-
-                  
-                  <p>{{connect.message}}</p>     
+            </div>            
+                   <fusioncharts 
+                      width="600" 
+                      height="400"
+                      type="column3d"
+                      datasource="{{generalData}}"
+                  ></fusioncharts>               
+                  <p>{{connect.message}}</p>
+                  <p>{{notas}}</p>
+                   <fusioncharts 
+                      width="600" 
+                      height="400"
+                      type="column2d"
+                      datasource="{{generalattemptsData}}"
+                  ></fusioncharts>        
           </div> 
         </div>
       </div>         
